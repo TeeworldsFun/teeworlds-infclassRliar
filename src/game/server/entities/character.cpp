@@ -2583,6 +2583,9 @@ void CCharacter::GiveGift(int GiftType)
 			GiveWeapon(WEAPON_GRENADE, -1);
 			GiveWeapon(WEAPON_RIFLE, -1);
 			break;
+		case PLAYERCLASS_HUNTER:
+			GiveWeapon(WEAPON_SHOTGUN, -1);
+			break;
 	}
 }
 
@@ -3671,6 +3674,7 @@ void CCharacter::ClassSpawnAttributes()
 			RemoveAllGun();
 			m_aWeapons[WEAPON_HAMMER].m_Got = true;
 			GiveWeapon(WEAPON_HAMMER, -1);
+			GiveWeapon(WEAPON_SHOTGUN, -1);
 			m_ActiveWeapon = WEAPON_HAMMER;
 			
 			GameServer()->SendBroadcast_ClassIntro(m_pPlayer->GetCID(), PLAYERCLASS_HUNTER);
@@ -4037,6 +4041,8 @@ int CCharacter::GetInfWeaponID(int WID)
 				return INFWEAPON_HERO_SHOTGUN;
 			case PLAYERCLASS_BIOLOGIST:
 				return INFWEAPON_BIOLOGIST_SHOTGUN;
+			case PLAYERCLASS_HUNTER:
+				return INFWEAPON_HUNTER_SHOTGUN;
 			default:
 				return INFWEAPON_SHOTGUN;
 		}
