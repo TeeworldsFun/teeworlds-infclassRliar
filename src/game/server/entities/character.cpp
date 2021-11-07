@@ -420,7 +420,7 @@ void CCharacter::HandleWeaponSwitch()
 	int Next = CountInput(m_LatestPrevInput.m_NextWeapon, m_LatestInput.m_NextWeapon).m_Presses;
 	int Prev = CountInput(m_LatestPrevInput.m_PrevWeapon, m_LatestInput.m_PrevWeapon).m_Presses;
 
-	if(GetClass() == PLAYERCLASS_SPIDER)
+	if(GetClass() == PLAYERCLASS_UNDEAD)
 	{
 		int WantedHookMode = m_HookMode;
 		
@@ -2578,6 +2578,11 @@ void CCharacter::GiveGift(int GiftType)
 			GiveWeapon(WEAPON_GUN, -1);
 			GiveWeapon(WEAPON_GRENADE, -1);
 			break;
+		case PLAYERCLASS_SPIDER:
+			GiveWeapon(WEAPON_GUN, -1);
+			GiveWeapon(WEAPON_GRENADE, -1);
+			GiveWeapon(WEAPON_RIFLE, -1);
+			break;
 	}
 }
 
@@ -3605,6 +3610,24 @@ void CCharacter::ClassSpawnAttributes()
 				m_pPlayer->m_knownClass[PLAYERCLASS_NINJA] = true;
 			}
 			break;
+		case PLAYERCLASS_SPIDER:
+			RemoveAllGun();
+			m_pPlayer->m_InfectionTick = -1;
+			m_Health = 10;
+			RemoveAllGun();
+			m_aWeapons[WEAPON_HAMMER].m_Got = true;
+			GiveWeapon(WEAPON_HAMMER, -1);
+			GiveWeapon(WEAPON_GRENADE, -1);
+			GiveWeapon(WEAPON_RIFLE, -1);
+			m_ActiveWeapon = WEAPON_HAMMER;
+			
+			GameServer()->SendBroadcast_ClassIntro(m_pPlayer->GetCID(), PLAYERCLASS_SPIDER);
+			if(!m_pPlayer->IsKnownClass(PLAYERCLASS_SPIDER))
+			{
+				GameServer()->SendChatTarget_Localization(m_pPlayer->GetCID(), CHATCATEGORY_DEFAULT, _("Type “/help {str:ClassName}” for more information about your class"), "ClassName", "spider", NULL);
+				m_pPlayer->m_knownClass[PLAYERCLASS_SPIDER] = true;
+			}
+			break;
 		case PLAYERCLASS_NONE:
 			m_pPlayer->m_InfectionTick = -1;
 			m_Health = 10;
@@ -3685,21 +3708,6 @@ void CCharacter::ClassSpawnAttributes()
 			{
 				GameServer()->SendChatTarget_Localization(m_pPlayer->GetCID(), CHATCATEGORY_DEFAULT, _("Type “/help {str:ClassName}” for more information about your class"), "ClassName", "ghost", NULL);
 				m_pPlayer->m_knownClass[PLAYERCLASS_GHOST] = true;
-			}
-			break;
-		case PLAYERCLASS_SPIDER:
-			m_Health = 10;
-			m_Armor = 0;
-			RemoveAllGun();
-			m_aWeapons[WEAPON_HAMMER].m_Got = true;
-			GiveWeapon(WEAPON_HAMMER, -1);
-			m_ActiveWeapon = WEAPON_HAMMER;
-			
-			GameServer()->SendBroadcast_ClassIntro(m_pPlayer->GetCID(), PLAYERCLASS_SPIDER);
-			if(!m_pPlayer->IsKnownClass(PLAYERCLASS_SPIDER))
-			{
-				GameServer()->SendChatTarget_Localization(m_pPlayer->GetCID(), CHATCATEGORY_DEFAULT, _("Type “/help {str:ClassName}” for more information about your class"), "ClassName", "spider", NULL);
-				m_pPlayer->m_knownClass[PLAYERCLASS_SPIDER] = true;
 			}
 			break;
 		case PLAYERCLASS_VOODOO:
@@ -4002,6 +4010,8 @@ int CCharacter::GetInfWeaponID(int WID)
 		{
 			case PLAYERCLASS_NINJA:
 				return INFWEAPON_NINJA_HAMMER;
+			case PLAYERCLASS_SPIDER:
+				return INFWEAPON_SPIDER_HAMMER;
 			default:
 				return INFWEAPON_HAMMER;
 		}
@@ -4049,6 +4059,8 @@ int CCharacter::GetInfWeaponID(int WID)
 				return INFWEAPON_HERO_GRENADE;
 			case PLAYERCLASS_LOOPER:
 				return INFWEAPON_LOOPER_GRENADE;
+			case PLAYERCLASS_SPIDER:
+				return INFWEAPON_SPIDER_GRENADE;
 			default:
 				return INFWEAPON_GRENADE;
 		}
@@ -4071,6 +4083,8 @@ int CCharacter::GetInfWeaponID(int WID)
 				return INFWEAPON_BIOLOGIST_RIFLE;
 			case PLAYERCLASS_MEDIC:
 				return INFWEAPON_MEDIC_RIFLE;
+			case PLAYERCLASS_SPIDER:
+				return INFWEAPON_SPIDER_RIFLE;
 			default:
 				return INFWEAPON_RIFLE;
 		}
