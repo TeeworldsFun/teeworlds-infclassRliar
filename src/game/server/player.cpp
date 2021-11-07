@@ -683,8 +683,8 @@ void CPlayer::SetClassSkin(int newClass, int State)
 		case PLAYERCLASS_SPIDER:
 			m_TeeInfos.m_UseCustomColor = 1;
 			str_copy(m_TeeInfos.m_SkinName, "pinky", sizeof(m_TeeInfos.m_SkinName));
-			m_TeeInfos.m_ColorBody = 3866368;
-			m_TeeInfos.m_ColorFeet = 65414;
+			m_TeeInfos.m_ColorBody = 123891;
+			m_TeeInfos.m_ColorFeet = 901823;
 			break;
 		case PLAYERCLASS_GHOUL:
 			m_TeeInfos.m_UseCustomColor = 1;

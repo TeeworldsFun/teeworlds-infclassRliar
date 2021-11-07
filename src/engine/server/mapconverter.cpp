@@ -823,7 +823,7 @@ void CMapConverter::Finalize()
 								AddTeeLayer("Sniper", SniperImageID, Pos, 64.0f, m_NumEnvs-1);
 								break;
 							case MENUCLASS_SPIDER:
-								AddTeeLayer("Spider", SpiderImageID, Pos, 64.0f, m_NumEnvs-1);
+								AddTeeLayer("Spider", SpiderImageID, Pos, 64.0f, m_NumEnvs-1, true);
 								break;
 						}
 					}
