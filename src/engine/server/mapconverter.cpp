@@ -560,13 +560,13 @@ void CMapConverter::Finalize()
 	int SoldierImageID = AddExternalImage("../skins/brownbear", 256, 128);
 	int ScientistImageID = AddExternalImage("../skins/toptri", 256, 128);
 	int BiologistImageID = AddExternalImage("../skins/twintri", 256, 128);
-	int LooperImageID = AddExternalImage("../skins/bluekitty", 256, 128);
-	int MedicImageID = AddExternalImage("../skins/twinbop", 256, 128);
-	int HeroImageID = AddExternalImage("../skins/redstripe", 256, 128);
-	int NinjaImageID = AddExternalImage("../skins/x_ninja", 256, 128);
-	int MercenaryImageID = AddExternalImage("../skins/bluestripe", 256, 128);
-	int SniperImageID = AddExternalImage("../skins/warpaint", 256, 128);
-	int SpiderImageID = AddExternalImage("../skins/pinky", 256, 128);
+	int LooperImageID = AddExternalImage("skins/bluekitty", 256, 128);
+	int MedicImageID = AddExternalImage("skins/twinbop", 256, 128);
+	int HeroImageID = AddExternalImage("skins/redstripe", 256, 128);
+	int NinjaImageID = AddExternalImage("skins/x_ninja", 256, 128);
+	int MercenaryImageID = AddExternalImage("skins/bluestripe", 256, 128);
+	int SniperImageID = AddExternalImage("skins/warpaint", 256, 128);
+	int SpiderImageID = AddExternalImage("skins/pinky", 256, 128);
 	
 	//Menu
 	
@@ -823,7 +823,7 @@ void CMapConverter::Finalize()
 								AddTeeLayer("Sniper", SniperImageID, Pos, 64.0f, m_NumEnvs-1);
 								break;
 							case MENUCLASS_SPIDER:
-								AddTeeLayer("Spider", SpiderImageID, Pos, 64.0f, m_NumEnvs-1, true);
+								AddTeeLayer("Spider", SpiderImageID, Pos, 64.0f, m_NumEnvs-1);
 								break;
 						}
 					}

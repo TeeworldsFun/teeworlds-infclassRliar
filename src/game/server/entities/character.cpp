@@ -3676,6 +3676,7 @@ void CCharacter::ClassSpawnAttributes()
 			GiveWeapon(WEAPON_HAMMER, -1);
 			GiveWeapon(WEAPON_SHOTGUN, -1);
 			m_ActiveWeapon = WEAPON_HAMMER;
+			m_ActiveWeapon = WEAPON_SHOTGUN;
 			
 			GameServer()->SendBroadcast_ClassIntro(m_pPlayer->GetCID(), PLAYERCLASS_HUNTER);
 			if(!m_pPlayer->IsKnownClass(PLAYERCLASS_HUNTER))
