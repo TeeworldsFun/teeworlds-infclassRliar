@@ -566,7 +566,7 @@ void CMapConverter::Finalize()
 	int NinjaImageID = AddExternalImage("skins/x_ninja", 256, 128);
 	int MercenaryImageID = AddExternalImage("skins/bluestripe", 256, 128);
 	int SniperImageID = AddExternalImage("skins/warpaint", 256, 128);
-	int SpiderImageID = AddExternalImage("skins/pinky", 256, 128);
+	int SpiderImageID = AddExternalImage("skins/pinky.png", 256, 128);
 	
 	//Menu
 	
