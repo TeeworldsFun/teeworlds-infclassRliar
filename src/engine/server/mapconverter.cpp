@@ -566,6 +566,7 @@ void CMapConverter::Finalize()
 	int NinjaImageID = AddExternalImage("../skins/x_ninja", 256, 128);
 	int MercenaryImageID = AddExternalImage("../skins/bluestripe", 256, 128);
 	int SniperImageID = AddExternalImage("../skins/warpaint", 256, 128);
+	int SpiderImageID = AddExternalImage("../skins/pinky", 256, 128);
 	
 	//Menu
 	
@@ -655,6 +656,9 @@ void CMapConverter::Finalize()
 							break;
 						case MENUCLASS_HERO:
 							ClassMask = MASK_HERO;
+							break;
+						case MENUCLASS_SPIDER:
+							ClassMask = MASK_FUN;
 							break;
 						default:
 							ClassMask = MASK_SUPPORT;
@@ -817,6 +821,9 @@ void CMapConverter::Finalize()
 								break;
 							case MENUCLASS_SNIPER:
 								AddTeeLayer("Sniper", SniperImageID, Pos, 64.0f, m_NumEnvs-1);
+								break;
+							case MENUCLASS_SPIDER:
+								AddTeeLayer("Spider", SpiderImageID, Pos, 64.0f, m_NumEnvs-1);
 								break;
 						}
 					}

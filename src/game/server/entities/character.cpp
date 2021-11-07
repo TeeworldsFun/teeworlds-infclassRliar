@@ -2209,6 +2209,13 @@ void CCharacter::Tick()
 							Broadcast = true;
 						}
 						break;
+					case CMapConverter::MENUCLASS_SPIDER:
+						if(GameServer()->m_pController->IsChoosableClass(PLAYERCLASS_SPIDER))
+						{
+							GameServer()->SendBroadcast_Localization(m_pPlayer->GetCID(), BROADCAST_PRIORITY_INTERFACE, BROADCAST_DURATION_REALTIME, _("Spider"), NULL);
+							Broadcast = true;
+						}
+						break;
 				}
 			}
 			
@@ -2258,6 +2265,9 @@ void CCharacter::Tick()
 						break;
 					case CMapConverter::MENUCLASS_LOOPER:
 						NewClass = PLAYERCLASS_LOOPER;
+						break;
+					case CMapConverter::MENUCLASS_SPIDER:
+						NewClass = PLAYERCLASS_SPIDER;
 						break;
 				}
 				

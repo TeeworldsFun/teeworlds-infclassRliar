@@ -15,7 +15,6 @@ CGameControllerMOD::CGameControllerMOD(class CGameContext *pGameServer)
 : IGameController(pGameServer)
 {
 	m_pGameType = "dInfClassRc         liar";
-	
 	m_GrowingMap = 0;
 	
 	m_ExplosionStarted = false;
@@ -508,6 +507,7 @@ void CGameControllerMOD::Snap(int SnappingClient)
 		int Medic = 0;
 		int Hero = 0;
 		int Support = 0;
+		int Fun = 0;
 		
 		CPlayerIterator<PLAYERITER_INGAME> Iter(GameServer()->m_apPlayers);
 		while(Iter.Next())
@@ -534,7 +534,9 @@ void CGameControllerMOD::Snap(int SnappingClient)
 				case PLAYERCLASS_LOOPER:
 					Defender++;
 					break;
-					
+				case PLAYERCLASS_SPIDER:
+					Fun++;
+					break;
 			}
 		}
 		
@@ -546,6 +548,8 @@ void CGameControllerMOD::Snap(int SnappingClient)
 			ClassMask |= CMapConverter::MASK_HERO;
 		if(Support < g_Config.m_InfSupportLimit)
 			ClassMask |= CMapConverter::MASK_SUPPORT;
+		if(Support < g_Config.m_InfProbaSpider)
+			ClassMask |= CMapConverter::MASK_FUN;
 	}
 	
 	if(GameServer()->m_apPlayers[SnappingClient])
@@ -975,6 +979,8 @@ bool CGameControllerMOD::IsEnabledClass(int PlayerClass) {
 			return g_Config.m_InfEnableSniper;
 		case PLAYERCLASS_LOOPER:
 			return g_Config.m_InfEnableLooper;
+		case PLAYERCLASS_SPIDER:
+			return g_Config.m_InfEnableSpider;
 		default:
 			return false;
 	}
@@ -989,6 +995,7 @@ bool CGameControllerMOD::IsChoosableClass(int PlayerClass)
 	int nbMedic = 0;
 	int nbHero = 0;
 	int nbSupport = 0;
+	int nbFun = 0;
 
 	CPlayerIterator<PLAYERITER_INGAME> Iter(GameServer()->m_apPlayers);
 	while(Iter.Next())
@@ -1015,6 +1022,9 @@ bool CGameControllerMOD::IsChoosableClass(int PlayerClass)
 			case PLAYERCLASS_LOOPER:
 				nbDefender++;
 				break;
+			case PLAYERCLASS_SPIDER:
+				nbFun++;
+				break;
 		}
 	}
 	
@@ -1035,6 +1045,8 @@ bool CGameControllerMOD::IsChoosableClass(int PlayerClass)
 			return (nbSupport < g_Config.m_InfSupportLimit);
 		case PLAYERCLASS_LOOPER:
 			return (nbDefender < g_Config.m_InfDefenderLimit);
+		case PLAYERCLASS_SPIDER:
+			return (nbFun < g_Config.m_InfProbaSpider);
 	}
 	
 	return false;

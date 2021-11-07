@@ -312,7 +312,7 @@ function build(settings)
 	end
 
 	-- build server, version server and master server
-	server_exe = Link(server_settings, "bin/server", engine, server,
+	server_exe = Link(server_settings, "dInfclassRc", engine, server,
 		game_shared, game_server, infclassr, teeuniverses, zlib, server_link_other, md5, json)
 
 	serverlaunch = {}
