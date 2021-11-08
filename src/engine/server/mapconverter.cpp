@@ -556,17 +556,17 @@ int CMapConverter::AddExternalImage(const char* pImageName, int Width, int Heigh
 
 void CMapConverter::Finalize()
 {
-	int EngineerImageID = AddExternalImage("../skins/limekitty", 256, 128);
-	int SoldierImageID = AddExternalImage("../skins/brownbear", 256, 128);
-	int ScientistImageID = AddExternalImage("../skins/toptri", 256, 128);
-	int BiologistImageID = AddExternalImage("../skins/twintri", 256, 128);
+	int EngineerImageID = AddExternalImage("skins/limekitty", 256, 128);
+	int SoldierImageID = AddExternalImage("skins/brownbear", 256, 128);
+	int ScientistImageID = AddExternalImage("skins/toptri", 256, 128);
+	int BiologistImageID = AddExternalImage("skins/twintri", 256, 128);
 	int LooperImageID = AddExternalImage("skins/bluekitty", 256, 128);
 	int MedicImageID = AddExternalImage("skins/twinbop", 256, 128);
 	int HeroImageID = AddExternalImage("skins/redstripe", 256, 128);
 	int NinjaImageID = AddExternalImage("skins/x_ninja", 256, 128);
 	int MercenaryImageID = AddExternalImage("skins/bluestripe", 256, 128);
 	int SniperImageID = AddExternalImage("skins/warpaint", 256, 128);
-	int SpiderImageID = AddExternalImage("skins/pinky.png", 256, 128);
+	int SpiderImageID = AddExternalImage("skins/pinky", 256, 128);
 	
 	//Menu
 	
@@ -790,7 +790,7 @@ void CMapConverter::Finalize()
 						switch(i)
 						{
 							case MENUCLASS_RANDOM:
-								AddTeeLayer("Random", SniperImageID, Pos, 64.0f, m_NumEnvs-1, true);
+								AddTeeLayer("Random", SniperImageID, Pos, 32.0f, m_NumEnvs-1, true);
 								break;
 							case MENUCLASS_ENGINEER:
 								AddTeeLayer("Engineer", EngineerImageID, Pos, 64.0f, m_NumEnvs-1);

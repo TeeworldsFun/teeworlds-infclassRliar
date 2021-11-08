@@ -1384,6 +1384,11 @@ void CCharacter::FireWeapon()
 					new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach*0.7f, m_pPlayer->GetCID(), Damage);
 					GameServer()->CreateSound(m_Pos, SOUND_RIFLE_FIRE);
 				}
+				else if (GetClass() == PLAYERCLASS_SPIDER) {
+					Damage = 3;
+					new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach*0.7f, m_pPlayer->GetCID(), Damage);
+					GameServer()->CreateSound(m_Pos, SOUND_CTF_CAPTURE);
+				}
 				else
 				{
 					new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach, m_pPlayer->GetCID(), Damage);
@@ -2109,6 +2114,14 @@ void CCharacter::Tick()
 	if(GetClass() == PLAYERCLASS_BAT) {
 		if(IsGrounded() || g_Config.m_InfBatAirjumpLimit == 0) m_AirJumpCounter = 0;
 		else if(m_Core.m_TriggeredEvents&COREEVENT_AIR_JUMP && m_AirJumpCounter < g_Config.m_InfBatAirjumpLimit) {
+			m_Core.m_Jumped &= ~2;
+			m_AirJumpCounter++;
+		}
+	}
+
+	if(GetClass() == PLAYERCLASS_SPIDER) {
+		if(IsGrounded() || g_Config.m_InfBatAirjumpLimit == 0) m_AirJumpCounter = 0;
+		else if(m_Core.m_TriggeredEvents&COREEVENT_AIR_JUMP && m_AirJumpCounter < 3) {
 			m_Core.m_Jumped &= ~2;
 			m_AirJumpCounter++;
 		}

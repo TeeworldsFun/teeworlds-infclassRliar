@@ -120,6 +120,7 @@ MACRO_CONFIG_INT(InfEnableNinja, inf_enable_ninja, 1, 0, 1, CFGFLAG_SERVER, "Mak
 MACRO_CONFIG_INT(InfEnableMedic, inf_enable_medic, 1, 0, 1, CFGFLAG_SERVER, "Makes the medic class available")
 MACRO_CONFIG_INT(InfEnableHero, inf_enable_hero, 1, 0, 1, CFGFLAG_SERVER, "Makes the hero class available")
 MACRO_CONFIG_INT(InfEnableSpider, inf_enable_spider, 1, 0, 1, CFGFLAG_SERVER, "Makes the Spider fun class available :)")
+MACRO_CONFIG_INT(InfFunLimit, inf_fun_limit, 5, 0, 10, CFGFLAG_SERVER, "Max Fun class(Spider..)")
 
 MACRO_CONFIG_INT(InfHeroFlagIndicator, inf_hero_flag_indicator, 1, 0, 1, CFGFLAG_SERVER, "Shows the heros in which direction the next flag is")
 MACRO_CONFIG_INT(InfHeroFlagIndicatorTime, inf_hero_flag_indicator_time, 3, 0, 1000, CFGFLAG_SERVER, "How many seconds the hero has to stand still until the indicator is shown")

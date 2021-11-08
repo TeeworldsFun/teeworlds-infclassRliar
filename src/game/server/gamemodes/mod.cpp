@@ -815,6 +815,7 @@ int CGameControllerMOD::ChooseHumanClass(const CPlayer *pPlayer) const
 	int nbHero = 0;
 	int nbMedic = 0;
 	int nbDefender = 0;
+	int nbFun = 0;
 	CPlayerIterator<PLAYERITER_INGAME> Iter(GameServer()->m_apPlayers);	
 	
 	while(Iter.Next())
@@ -840,6 +841,9 @@ int CGameControllerMOD::ChooseHumanClass(const CPlayer *pPlayer) const
 				break;
 			case PLAYERCLASS_LOOPER:
 				nbDefender++;
+				break;
+			case PLAYERCLASS_SPIDER:
+				nbFun++;
 				break;
 		}
 	}
@@ -878,6 +882,10 @@ int CGameControllerMOD::ChooseHumanClass(const CPlayer *pPlayer) const
 	Probability[PLAYERCLASS_LOOPER - START_HUMANCLASS - 1] =
 		(nbDefender < g_Config.m_InfDefenderLimit && g_Config.m_InfEnableLooper) ?
 		1.0f : 0.0f;
+	Probability[PLAYERCLASS_SPIDER - START_HUMANCLASS - 1] =
+		(nbDefender < g_Config.m_InfFunLimit && g_Config.m_InfEnableSpider) ?
+		1.0f : 0.0f;
+	
 	
 
 	//Random is not fair enough. We keep the last two classes took by the player, and avoid to give him those again
