@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `tw_Users` (
 	`RegisterDate` DATETIME NOT NULL DEFAULT NOW(), 
 	`RegisterIp` VARCHAR(64) NOT NULL, 
     PRIMARY KEY (`UserId`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `tw_infc_Rounds`;
 CREATE TABLE IF NOT EXISTS `tw_infc_Rounds` (
