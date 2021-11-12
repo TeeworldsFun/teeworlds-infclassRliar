@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `tw_infc_Rounds` (
     `RoundDate` DATETIME NOT NULL, 
     `RoundDuration` INT NOT NULL, 
     PRIMARY KEY (`RoundId`)
-) CHARACTER SET utf8 ;
+) CHARSET=utf8;
 
 DROP TABLE IF EXISTS `tw_infc_RoundScore`;
 CREATE TABLE IF NOT EXISTS `tw_infc_RoundScore` (
@@ -36,4 +36,4 @@ CREATE TABLE IF NOT EXISTS `tw_infc_RoundScore` (
     PRIMARY KEY (`RoundScoreId`), 
     FOREIGN KEY (`UserId`) REFERENCES tw_Users(`UserId`), 
     FOREIGN KEY (`RoundId`) REFERENCES tw_infc_Rounds(`RoundId`)
-) CHARACTER SET utf8 ;
+) CHARSET=utf8;
