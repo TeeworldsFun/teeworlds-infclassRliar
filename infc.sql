@@ -1,5 +1,6 @@
 -- write by FFS
-
+DROP TABLE IF EXISTS `tw_infc_RoundScore`;
+DROP TABLE IF EXISTS `tw_infc_Rounds`;
 DROP TABLE IF EXISTS `tw_Users`;
 CREATE TABLE IF NOT EXISTS `tw_Users` (
 	`UserId` INT NOT NULL AUTO_INCREMENT, 
@@ -12,7 +13,6 @@ CREATE TABLE IF NOT EXISTS `tw_Users` (
     PRIMARY KEY (`UserId`)
 ) DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `tw_infc_Rounds`;
 CREATE TABLE IF NOT EXISTS `tw_infc_Rounds` (
     `RoundId` INT NOT NULL AUTO_INCREMENT, 
     `MapName` VARCHAR(64) NOT NULL, 
@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `tw_infc_Rounds` (
     PRIMARY KEY (`RoundId`)
 ) DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `tw_infc_RoundScore`;
 CREATE TABLE IF NOT EXISTS `tw_infc_RoundScore` (
     `RoundScoreId` INT NOT NULL AUTO_INCREMENT, 
     `UserId` INT NOT NULL, 
