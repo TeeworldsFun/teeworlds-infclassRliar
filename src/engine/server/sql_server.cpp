@@ -1,19 +1,17 @@
+#ifdef CONF_SQL
 #include <base/system.h>
 #include <engine/shared/protocol.h>
 #include <engine/shared/config.h>
 
 #include "sql_server.h"
-//#include <cppconn/driver.h>
+
+
 int CSqlServer::ms_NumReadServer = 0;
 int CSqlServer::ms_NumWriteServer = 0;
 
-/*
 CSqlServer::CSqlServer(const char* pDatabase, const char* pPrefix, const char* pUser, const char* pPass, const char* pIp, int Port, bool ReadOnly, bool SetUpDb) :
 		m_Port(Port),
 		m_SetUpDB(SetUpDb)
-*/
-CSqlServer::CSqlServer(const char* pDatabase, const char* pPrefix, const char* pUser, const char* pPass, const char* pIp, int Port, bool ReadOnly) :
-		m_Port(Port)
 {
 	str_copy(m_aDatabase, pDatabase, sizeof(m_aDatabase));
 	str_copy(m_aPrefix, pPrefix, sizeof(m_aPrefix));
@@ -64,6 +62,7 @@ bool CSqlServer::Connect()
 		catch (sql::SQLException &e)
 		{
 			dbg_msg("sql", "MySQL Error: %s", e.what());
+
 			dbg_msg("sql", "ERROR: SQL connection failed");
 			UnLock();
 			return false;
@@ -93,6 +92,14 @@ bool CSqlServer::Connect()
 
 		// Create Statement
 		m_pStatement = m_pConnection->createStatement();
+
+		if (m_SetUpDB)
+		{
+			char aBuf[128];
+			// create database
+			str_format(aBuf, sizeof(aBuf), "CREATE DATABASE IF NOT EXISTS %s", m_aDatabase);
+			m_pStatement->execute(aBuf);
+		}
 
 		// Connect to specific database
 		m_pConnection->setSchema(m_aDatabase);
@@ -154,7 +161,67 @@ void CSqlServer::Disconnect()
 
 void CSqlServer::CreateTables()
 {
-	return;
+	if (!Connect())
+		return;
+
+	try
+	{
+		char aBuf[1024];
+
+		// create tables
+
+		str_format(aBuf, sizeof(aBuf),
+				"CREATE TABLE IF NOT EXISTS `%s_Users` ("
+					"`UserId` INT NOT NULL AUTO_INCREMENT, "
+					"`Username` VARCHAR(64) BINARY NOT NULL, "
+					"`Email` VARCHAR(64) BINARY NOT NULL, "
+					"`PasswordHash` VARCHAR(64) BINARY NOT NULL, "
+					"`Level` INT DEFAULT '0' NOT NULL, "
+					"`RegisterDate` DATETIME NOT NULL DEFAULT NOW, "
+					"`RegisterIp` VARCHAR(64) NOT NULL, " //The IP is kept in order to prevent registration flooding
+					"PRIMARY KEY (`UserId`)"
+				") CHARSET=utf8 ;"
+			, m_aPrefix);
+		executeSql(aBuf);
+
+		str_format(aBuf, sizeof(aBuf),
+				"CREATE TABLE IF NOT EXISTS `%s_infc_Rounds` ("
+					"`RoundId` INT NOT NULL AUTO_INCREMENT, "
+					"`MapName` VARCHAR(64) BINARY NOT NULL, "
+					"`NumPlayersMin` INT NOT NULL, "
+					"`NumPlayersMax` INT NOT NULL, "
+					"`NumWinners` INT NOT NULL, "
+					"`RoundDate` DATETIME NOT NULL DEFAULT NOW, "
+					"`RoundDuration` INT NOT NULL, "
+					"PRIMARY KEY (`RoundId`)"
+				") CHARSET=utf8 ;"
+			, m_aPrefix, m_aPrefix);
+		executeSql(aBuf);
+
+		str_format(aBuf, sizeof(aBuf),
+				"CREATE TABLE IF NOT EXISTS `%s_infc_RoundScore` ("
+					"`RoundScoreId` INT NOT NULL AUTO_INCREMENT, "
+					"`UserId` INT NOT NULL, "
+					"`RoundId` INT NOT NULL, "
+					"`MapName` VARCHAR(64) BINARY NOT NULL, "
+					"`ScoreType` INT NOT NULL, "
+					"`ScoreDate` DATETIME NOT NULL DEFAULT NOW, "
+					"`Score` INT NOT NULL, "
+					"PRIMARY KEY (RoundScoreId), "
+					"FOREIGN KEY (UserId) REFERENCES %s_Users(`UserId`), "
+					"FOREIGN KEY (RoundId) REFERENCES %s_infc_Rounds(`RoundId`)"
+				") CHARSET=utf8 ;"
+			, m_aPrefix, m_aPrefix, m_aPrefix);
+		executeSql(aBuf);
+
+		dbg_msg("sql", "Tables were created successfully");
+	}
+	catch (sql::SQLException &e)
+	{
+		dbg_msg("sql", "MySQL Error: %s", e.what());
+	}
+
+	Disconnect();
 }
 
 void CSqlServer::executeSql(const char *pCommand)
@@ -172,3 +239,4 @@ void CSqlServer::executeSqlQuery(const char *pQuery)
 	m_pResults = m_pStatement->executeQuery(pQuery);
 }
 
+#endif
