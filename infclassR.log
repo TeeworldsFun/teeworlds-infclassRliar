@@ -1,241 +1,54 @@
-[618f652c][server]: starting...
-[618f652c][datafile]: loading. filename='maps/infc_newdust.map'
-[618f652c][datafile]: allocsize=3932
-[618f652c][datafile]: readsize=3532
-[618f652c][datafile]: swaplen=3552
-[618f652c][datafile]: item_size=2996
-[618f652c][datafile]: loading done. datafile='maps/infc_newdust.map'
-[618f652c][datafile]: loading. filename='maps/infc_newdust.map'
-[618f652c][datafile]: allocsize=3932
-[618f652c][datafile]: readsize=3532
-[618f652c][datafile]: swaplen=3552
-[618f652c][datafile]: item_size=2996
-[618f652c][datafile]: loading done. datafile='maps/infc_newdust.map'
-[618f652c][datafile]: loading data index=15 size=1831 uncompressed=176400
-[618f652c][datafile]: loading. filename='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
-[618f652c][datafile]: could not open 'clientmaps/infc_newdust_19d6608f/tw06-highres.map'
-[618f652c][datafile]: loading data index=26 size=13 uncompressed=5
-[618f652c][datafile]: loading data index=27 size=15 uncompressed=7
-[618f652c][datafile]: loading data index=28 size=16558 uncompressed=2048000
-[618f652c][datafile]: loading data index=29 size=18 uncompressed=10
-[618f652c][datafile]: loading data index=30 size=24 uncompressed=16
-[618f652c][datafile]: loading data index=31 size=147512 uncompressed=4194304
-[618f652c][datafile]: loading data index=32 size=18 uncompressed=10
-[618f652c][datafile]: loading data index=33 size=38083 uncompressed=4194304
-[618f652c][datafile]: loading data index=34 size=19 uncompressed=11
-[618f652c][datafile]: loading data index=4 size=77 uncompressed=152
-[618f652c][datafile]: loading data index=5 size=57 uncompressed=152
-[618f652c][datafile]: loading data index=6 size=85 uncompressed=152
-[618f652c][datafile]: loading data index=7 size=78 uncompressed=152
-[618f652c][datafile]: loading data index=8 size=151 uncompressed=608
-[618f652c][datafile]: loading data index=9 size=1751 uncompressed=151680
-[618f652c][datafile]: loading data index=10 size=166 uncompressed=456
-[618f652c][datafile]: loading data index=11 size=846 uncompressed=3952
-[618f652c][datafile]: loading data index=12 size=1401 uncompressed=7144
-[618f652c][datafile]: loading data index=13 size=1864 uncompressed=9728
-[618f652c][datafile]: loading data index=14 size=414 uncompressed=1824
-[618f652c][datafile]: loading data index=16 size=1926 uncompressed=170880
-[618f652c][datafile]: loading data index=17 size=1021 uncompressed=142560
-[618f652c][datafile]: loading data index=18 size=3981 uncompressed=151200
-[618f652c][datafile]: loading data index=19 size=39 uncompressed=16384
-[618f652c][datafile]: loading data index=20 size=224 uncompressed=1216
-[618f652c][datafile]: loading data index=21 size=333 uncompressed=176400
-[618f652c][datafile]: loading data index=22 size=341 uncompressed=176400
-[618f652c][datafile]: loading data index=23 size=1274 uncompressed=12464
-[618f652c][datafile]: loading data index=24 size=735 uncompressed=7296
-[618f652c][datafile]: loading data index=25 size=244 uncompressed=2584
-[618f652c][infclass]: highres map created
-[618f652c][datafile]: loading. filename='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
-[618f652c][datafile]: allocsize=22816
-[618f652c][datafile]: readsize=22256
-[618f652c][datafile]: swaplen=22276
-[618f652c][datafile]: item_size=21332
-[618f652c][datafile]: loading done. datafile='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
-[618f652c][server]: map crc is 19d6608f, generated map crc is 5e774e96
-[618f652c][server]: maps/infc_x_current.map loaded in memory
-[618f652c][server]: server name is '[中国合伙人]dInfcRChina感染模式[CHNFun]修改版'
-[618f652c][datafile]: loading data index=23 size=1274 uncompressed=12464
-[618f652c][datafile]: loading data index=24 size=735 uncompressed=7296
-[618f652c][datafile]: loading data index=25 size=244 uncompressed=2584
-[618f652c][server]: version 0.6 bfa4d5b55f42e5a3
-[618f652c][engine/mastersrv]: refreshing master server addresses
-[618f652c][register]: refreshing ip addresses
-[618f652c][engine/mastersrv]: saving addresses
-[618f652c][register]: fetching server counts
-[618f652f][register]: chose 'master3.teeworlds.com' as master, sending heartbeats
-[618f6538][server]: player is ready. ClientID=0 addr=127.0.0.1:50800 secure=yes
-[618f6539][game]: Active Players: 0
-[618f6539][game]: Spectators: 0
-[618f653a][server]: player has entered the game. ClientID=0 addr=127.0.0.1:50800
-[618f653a][game]: team_join player='0:FLowerFEll-SAns' team=0
-[618f653a][game]: Active Players: 1
-[618f653a][game]: Spectators: 0
-[618f653a][datafile]: loading data index=21 size=333 uncompressed=176400
-[618f6563][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6563][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f656b][register]: WARNING: Master server is not responding, switching master
-[618f656b][engine/mastersrv]: refreshing master server addresses
-[618f656b][register]: refreshing ip addresses
-[618f656c][engine/mastersrv]: saving addresses
-[618f656c][register]: fetching server counts
-[618f656f][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f6581][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6581][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6590][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6590][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f65a2][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f65a2][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f65ab][register]: WARNING: Master server is not responding, switching master
-[618f65ab][engine/mastersrv]: refreshing master server addresses
-[618f65ab][register]: refreshing ip addresses
-[618f65ac][engine/mastersrv]: saving addresses
-[618f65ac][register]: fetching server counts
-[618f65af][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f65b1][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f65b1][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f65c0][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f65c0][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f65cf][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f65cf][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f65e3][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f65e3][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f65eb][register]: WARNING: Master server is not responding, switching master
-[618f65eb][engine/mastersrv]: refreshing master server addresses
-[618f65eb][register]: refreshing ip addresses
-[618f65ec][engine/mastersrv]: saving addresses
-[618f65ec][register]: fetching server counts
-[618f65ef][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f65f2][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f65f2][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6601][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6601][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6610][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6610][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6624][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6624][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f662b][register]: WARNING: Master server is not responding, switching master
-[618f662b][engine/mastersrv]: refreshing master server addresses
-[618f662b][register]: refreshing ip addresses
-[618f662b][engine/mastersrv]: saving addresses
-[618f662b][register]: fetching server counts
-[618f662e][register]: chose 'master3.teeworlds.com' as master, sending heartbeats
-[618f6633][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6633][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6642][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6642][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6651][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6651][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6662][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6662][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6666][game]: choose_class player='FLowerFEll-SAns' class='12'
-[618f666a][register]: WARNING: Master server is not responding, switching master
-[618f666a][engine/mastersrv]: refreshing master server addresses
-[618f666a][register]: refreshing ip addresses
-[618f666c][engine/mastersrv]: saving addresses
-[618f666c][register]: fetching server counts
-[618f666f][register]: chose 'master3.teeworlds.com' as master, sending heartbeats
-[618f6671][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6671][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6680][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6680][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f668f][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f668f][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f66a3][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f66a3][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f66ab][register]: WARNING: Master server is not responding, switching master
-[618f66ab][engine/mastersrv]: refreshing master server addresses
-[618f66ab][register]: refreshing ip addresses
-[618f66ab][engine/mastersrv]: saving addresses
-[618f66ab][register]: fetching server counts
-[618f66ae][register]: chose 'master3.teeworlds.com' as master, sending heartbeats
-[618f66b2][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f66b2][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f66c1][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f66c1][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f66d0][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f66d0][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f66e4][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f66e4][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f66ea][register]: WARNING: Master server is not responding, switching master
-[618f66ea][engine/mastersrv]: refreshing master server addresses
-[618f66ea][register]: refreshing ip addresses
-[618f66eb][engine/mastersrv]: saving addresses
-[618f66eb][register]: fetching server counts
-[618f66ee][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f66f3][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f66f3][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6702][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6702][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6711][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6711][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6723][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6723][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f672a][register]: WARNING: Master server is not responding, switching master
-[618f672a][engine/mastersrv]: refreshing master server addresses
-[618f672a][register]: refreshing ip addresses
-[618f672c][engine/mastersrv]: saving addresses
-[618f672c][register]: fetching server counts
-[618f672f][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f6732][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6732][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6741][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6741][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6750][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6750][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6764][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6764][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f676b][register]: WARNING: Master server is not responding, switching master
-[618f676b][engine/mastersrv]: refreshing master server addresses
-[618f676b][register]: refreshing ip addresses
-[618f6771][engine/mastersrv]: saving addresses
-[618f6771][register]: fetching server counts
-[618f6773][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6773][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6774][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f6791][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6791][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f67aa][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f67aa][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f67b0][register]: WARNING: Master server is not responding, switching master
-[618f67b0][engine/mastersrv]: refreshing master server addresses
-[618f67b0][register]: refreshing ip addresses
-[618f67b0][engine/mastersrv]: saving addresses
-[618f67b0][register]: fetching server counts
-[618f67b3][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f67b9][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f67b9][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f67d7][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f67d7][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f67e6][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f67e6][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f67ef][register]: WARNING: Master server is not responding, switching master
-[618f67ef][engine/mastersrv]: refreshing master server addresses
-[618f67ef][register]: refreshing ip addresses
-[618f67ef][engine/mastersrv]: saving addresses
-[618f67ef][register]: fetching server counts
-[618f67f2][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
-[618f67f5][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f67f5][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f6804][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6804][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f680b][game]: score player='FLowerFEll-SAns' amount='-10'
-[618f680b][game]: kill killer='FLowerFEll-SAns' victim='FLowerFEll-SAns' weapon=-2
-[618f680b][game]: infected victim='FLowerFEll-SAns' duration='0'
-[618f680b][game]: choose_class player='FLowerFEll-SAns' class='15'
-[618f680e][server]: client dropped. cid=0 addr=127.0.0.1:50800 reason=''
-[618f680e][server]: leave player='0:FLowerFEll-SAns'
-[618f680e][game]: Active Players: 0
-[618f680e][game]: Spectators: 0
-[618f680e][infclass]: session created for the client 0
-[618f680e][infclass]: accusation created for the client 0
-[618f680e][infclass]: session found for the client 0. Round id = -1, class id = 15
-[618f680e][infclass]: 0 accusation(s) found for the client 0
-[618f680e][server]: player is ready. ClientID=0 addr=127.0.0.1:50800 secure=yes
-[618f680f][game]: Active Players: 0
-[618f680f][game]: Spectators: 0
-[618f6810][server]: player has entered the game. ClientID=0 addr=127.0.0.1:50800
-[618f6810][game]: team_join player='0:FLowerFEll-SAns' team=0
-[618f6810][game]: Active Players: 1
-[618f6810][game]: Spectators: 0
-[618f6813][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f6813][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[618f8966][server]: starting...
+[618f8966][datafile]: loading. filename='maps/infc_newdust.map'
+[618f8966][datafile]: allocsize=3932
+[618f8966][datafile]: readsize=3532
+[618f8966][datafile]: swaplen=3552
+[618f8966][datafile]: item_size=2996
+[618f8966][datafile]: loading done. datafile='maps/infc_newdust.map'
+[618f8966][datafile]: loading. filename='maps/infc_newdust.map'
+[618f8966][datafile]: allocsize=3932
+[618f8966][datafile]: readsize=3532
+[618f8966][datafile]: swaplen=3552
+[618f8966][datafile]: item_size=2996
+[618f8966][datafile]: loading done. datafile='maps/infc_newdust.map'
+[618f8966][datafile]: loading data index=15 size=1831 uncompressed=176400
+[618f8966][datafile]: loading. filename='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
+[618f8966][datafile]: allocsize=22816
+[618f8966][datafile]: readsize=22256
+[618f8966][datafile]: swaplen=22276
+[618f8966][datafile]: item_size=21332
+[618f8966][datafile]: loading done. datafile='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
+[618f8966][server]: map crc is 19d6608f, generated map crc is 5e774e96
+[618f8966][server]: maps/infc_x_current.map loaded in memory
+[618f8966][server]: server name is '[中国合伙人]新角色! dInfcRChina感染模式[CHNFun]修改版'
+[618f8966][datafile]: loading data index=23 size=1274 uncompressed=12464
+[618f8966][datafile]: loading data index=24 size=735 uncompressed=7296
+[618f8966][datafile]: loading data index=25 size=244 uncompressed=2584
+[618f8966][server]: version 0.6 bfa4d5b55f42e5a3
+[618f8966][engine/mastersrv]: refreshing master server addresses
+[618f8966][register]: refreshing ip addresses
+[618f8966][server]: player is ready. ClientID=0 addr=127.0.0.1:36937 secure=yes
+[618f8966][engine/mastersrv]: saving addresses
+[618f8966][register]: fetching server counts
+[618f8967][game]: Active Players: 0
+[618f8967][game]: Spectators: 0
+[618f8967][server]: player has entered the game. ClientID=0 addr=127.0.0.1:36937
+[618f8967][game]: team_join player='0:FLowerFEll-SAns' team=0
+[618f8967][game]: Active Players: 1
+[618f8967][game]: Spectators: 0
+[618f8967][datafile]: loading data index=21 size=333 uncompressed=176400
+[618f8969][game]: choose_class player='FLowerFEll-SAns' class='12'
+[618f8969][register]: chose 'master3.teeworlds.com' as master, sending heartbeats
+[618f899f][register]: ERROR: the master server reports that clients can not connect to this server.
+[618f899f][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[618f89a0][server]: ClientID=0 authed (admin)
+[618f89a1][server]: ClientID=0 rcon='shutdown'
+[618f89a1][server]: client dropped. cid=0 addr=127.0.0.1:36937 reason='Server shutdown'
+[618f89a1][game]: kill killer='FLowerFEll-SAns' victim='FLowerFEll-SAns' weapon=-3
+[618f89a1][game]: infected victim='FLowerFEll-SAns' duration='0'
+[618f89a1][game]: choose_class player='FLowerFEll-SAns' class='16'
+[618f89a1][server]: leave player='0:FLowerFEll-SAns'
+[618f89a1][game]: Active Players: 0
+[618f89a1][game]: Spectators: 0
+[618f89a1][infclass]: session created for the client 0
+[618f89a1][infclass]: accusation created for the client 0

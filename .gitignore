@@ -20,6 +20,6 @@ build/
 /tileset_border*
 /versionsrv*
 /infclass_client*
-/infclass_srv*
+/dInfclassRc*
 /infclass_editor*
-/bin/server_d
+/infclassR.*

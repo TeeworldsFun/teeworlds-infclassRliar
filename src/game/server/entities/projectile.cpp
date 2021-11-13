@@ -63,6 +63,10 @@ vec2 CProjectile::GetPos(float Time)
 			Curvature = GameServer()->Tuning()->m_GunCurvature;
 			Speed = GameServer()->Tuning()->m_GunSpeed;
 			break;
+		case INFWEAPON_SPIDER_SHOTGUN:
+			Curvature = GameServer()->Tuning()->m_GrenadeCurvature;
+			Speed = GameServer()->Tuning()->m_GrenadeSpeed;
+			break;
 	}
 
 	return CalcPos(m_Pos, m_Direction, Curvature, Speed, Time);

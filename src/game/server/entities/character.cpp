@@ -420,16 +420,20 @@ void CCharacter::HandleWeaponSwitch()
 	int Next = CountInput(m_LatestPrevInput.m_NextWeapon, m_LatestInput.m_NextWeapon).m_Presses;
 	int Prev = CountInput(m_LatestPrevInput.m_PrevWeapon, m_LatestInput.m_PrevWeapon).m_Presses;
 
-	if(GetClass() == PLAYERCLASS_UNDEAD)
+	if(GetClass() == PLAYERCLASS_SPIDER)
 	{
 		int WantedHookMode = m_HookMode;
+		int WantedWeapon = m_ActiveWeapon;
+		if(m_QueuedWeapon != -1)
+			WantedWeapon = m_QueuedWeapon;
 		
 		if(Next < 128) // make sure we only try sane stuff
 		{
 			while(Next) // Next Weapon selection
 			{
-				WantedHookMode = (WantedHookMode+1)%2;
-				Next--;
+				WantedWeapon = (WantedWeapon+1)%NUM_WEAPONS;
+				if(m_aWeapons[WantedWeapon].m_Got)
+					Next--;
 			}
 		}
 
@@ -437,17 +441,25 @@ void CCharacter::HandleWeaponSwitch()
 		{
 			while(Prev) // Prev Weapon selection
 			{
-				WantedHookMode = (WantedHookMode+2-1)%2;
-				Prev--;
+				WantedWeapon = (WantedWeapon-1)<0?NUM_WEAPONS-1:WantedWeapon-1;
+				if(m_aWeapons[WantedWeapon].m_Got)
+					Prev--;
 			}
 		}
 
 		// Direct Weapon selection
 		if(m_LatestInput.m_WantedWeapon)
+		{
+			WantedWeapon = m_Input.m_WantedWeapon-1;
 			WantedHookMode = m_Input.m_WantedWeapon-1;
-
+		}
 		if(WantedHookMode >= 0 && WantedHookMode < 2)
 			m_HookMode = WantedHookMode;
+
+		if(WantedWeapon >= 0 && WantedWeapon < NUM_WEAPONS && WantedWeapon != m_ActiveWeapon && m_aWeapons[WantedWeapon].m_Got)
+			m_QueuedWeapon = WantedWeapon;
+
+		DoWeaponSwitch();
 	}
 	else
 	{
@@ -579,6 +591,19 @@ void CCharacter::UpdateTuningParam()
 		pTuningParams->m_HookDragAccel = pTuningParams->m_HookDragAccel * (1.0f + 0.5f*Factor);
 		pTuningParams->m_HookDragSpeed = pTuningParams->m_HookDragSpeed * (1.0f + 0.5f*Factor);
 	}
+/*
+	if(GetClass() == PLAYERCLASS_SPIDER)
+	{
+		float Factor = m_pPlayer->GetGhoulPercent();
+		pTuningParams->m_GroundControlSpeed = 10.0f;
+		pTuningParams->m_GroundControlAccel = 2.0f;
+		pTuningParams->m_GroundJumpImpulse = 10.0f;
+		pTuningParams->m_AirJumpImpulse = 10.0f;
+		pTuningParams->m_AirControlSpeed = 10.0f;
+		pTuningParams->m_AirControlAccel = 2.0f;
+		pTuningParams->m_HookDragAccel = 1.0f;
+		pTuningParams->m_HookDragSpeed = 5.0f;
+	}*/
 }
 
 void CCharacter::FireWeapon()
@@ -1119,7 +1144,7 @@ void CCharacter::FireWeapon()
 			Msg.AddInt(ShotSpread*2+1);
 
 			float Force = 2.0f;
-			if(GetClass() == PLAYERCLASS_MEDIC)
+			if(GetClass() == PLAYERCLASS_MEDIC || PLAYERCLASS_SPIDER)
 				Force = 10.0f;
 				
 			for(int i = -ShotSpread; i <= ShotSpread; ++i)
@@ -1387,7 +1412,7 @@ void CCharacter::FireWeapon()
 				else if (GetClass() == PLAYERCLASS_SPIDER) {
 					Damage = 3;
 					new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach*0.7f, m_pPlayer->GetCID(), Damage);
-					GameServer()->CreateSound(m_Pos, SOUND_CTF_CAPTURE);
+					GameServer()->CreateSound(m_Pos, SOUND_RIFLE_BOUNCE);
 				}
 				else
 				{
@@ -1672,17 +1697,17 @@ void CCharacter::ResetInput()
 void CCharacter::Tick()
 {
 /* INFECTION MODIFICATION START ***************************************/
-	//~ if(GameServer()->Collision()->CheckPhysicsFlag(m_Core.m_Pos, CCollision::COLFLAG_WATER))
-	//~ {
-		//~ if(m_InWater == 0)
-		//~ {
-			//~ m_InWater = 1;
-			//~ m_Core.m_Vel /= 2.0f;
-			//~ m_WaterJumpLifeSpan = 0;
-		//~ }
-	//~ }
-	//~ else
-		//~ m_InWater = 0;
+	/*if()
+	{
+		if(m_InWater == 0)
+		{
+			m_InWater = 1;
+			m_Core.m_Vel /= 2.0f;
+			m_WaterJumpLifeSpan = 0;
+		}
+	}
+	else
+		m_InWater = 0;*/
 	// Delayed Death
 	if(GetClass() == PLAYERCLASS_VOODOO && m_VoodooAboutToDie && m_VoodooTimeAlive > 0)
 	{
