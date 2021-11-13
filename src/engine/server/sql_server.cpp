@@ -171,7 +171,7 @@ void CSqlServer::CreateTables()
 		// create tables
 
 		str_format(aBuf, sizeof(aBuf),
-				"CREATE TABLE IF NOT EXISTS `%s_Users` ("
+				"CREATE TABLE IF NOT EXISTS `tw_Users` ("
 					"`UserId` INT NOT NULL AUTO_INCREMENT, "
 					"`Username` VARCHAR(64) BINARY NOT NULL, "
 					"`Email` VARCHAR(64) BINARY NOT NULL, "
@@ -181,11 +181,11 @@ void CSqlServer::CreateTables()
 					"`RegisterIp` VARCHAR(64) NOT NULL, " //The IP is kept in order to prevent registration flooding
 					"PRIMARY KEY (`UserId`)"
 				") CHARSET=utf8 ;"
-			, m_aPrefix);
+			);
 		executeSql(aBuf);
 
 		str_format(aBuf, sizeof(aBuf),
-				"CREATE TABLE IF NOT EXISTS `%s_infc_Rounds` ("
+				"CREATE TABLE IF NOT EXISTS `tw_infc_Rounds` ("
 					"`RoundId` INT NOT NULL AUTO_INCREMENT, "
 					"`MapName` VARCHAR(64) BINARY NOT NULL, "
 					"`NumPlayersMin` INT NOT NULL, "
@@ -195,11 +195,11 @@ void CSqlServer::CreateTables()
 					"`RoundDuration` INT NOT NULL, "
 					"PRIMARY KEY (`RoundId`)"
 				") CHARSET=utf8 ;"
-			, m_aPrefix, m_aPrefix);
+			);
 		executeSql(aBuf);
 
 		str_format(aBuf, sizeof(aBuf),
-				"CREATE TABLE IF NOT EXISTS `%s_infc_RoundScore` ("
+				"CREATE TABLE IF NOT EXISTS `tw_infc_RoundScore` ("
 					"`RoundScoreId` INT NOT NULL AUTO_INCREMENT, "
 					"`UserId` INT NOT NULL, "
 					"`RoundId` INT NOT NULL, "
@@ -208,10 +208,10 @@ void CSqlServer::CreateTables()
 					"`ScoreDate` DATETIME NOT NULL DEFAULT NOW, "
 					"`Score` INT NOT NULL, "
 					"PRIMARY KEY (RoundScoreId), "
-					"FOREIGN KEY (UserId) REFERENCES %s_Users(`UserId`), "
-					"FOREIGN KEY (RoundId) REFERENCES %s_infc_Rounds(`RoundId`)"
+					"FOREIGN KEY (UserId) REFERENCES tw_Users(`UserId`), "
+					"FOREIGN KEY (RoundId) REFERENCES tw_infc_Rounds(`RoundId`)"
 				") CHARSET=utf8 ;"
-			, m_aPrefix, m_aPrefix, m_aPrefix);
+			);
 		executeSql(aBuf);
 
 		dbg_msg("sql", "Tables were created successfully");

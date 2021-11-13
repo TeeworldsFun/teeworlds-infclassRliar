@@ -2005,7 +2005,7 @@ void CCharacter::Tick()
 			// Find other players
 			for(CCharacter *p = (CCharacter*) GameWorld()->FindFirst(CGameWorld::ENTTYPE_CHARACTER); p; p = (CCharacter *)p->TypeNext())
 			{
-				if(p->IsZombie()) continue;
+				if(p->IsHuman()) continue;
 
 				vec2 IntersectPos = closest_point_on_line(m_Core.m_Pos, m_Core.m_HookPos, p->m_Pos);
 				float Len = distance(p->m_Pos, IntersectPos);
@@ -2030,6 +2030,7 @@ void CCharacter::Tick()
 	if(GetClass() == PLAYERCLASS_SNIPER && m_InAirTick <= Server()->TickSpeed())
 	{
 		m_PositionLockAvailable = true;
+		
 	}
 	
 	if(m_IsFrozen)
@@ -2052,10 +2053,10 @@ void CCharacter::Tick()
 	CCharacterCore::CParams CoreTickParams(&m_pPlayer->m_NextTuningParams);
 	//~ CCharacterCore::CParams CoreTickParams(&GameWorld()->m_Core.m_Tuning);
 	
-	if(GetClass() == PLAYERCLASS_SPIDER)
+	/*if(GetClass() == PLAYERCLASS_SPIDER)
 	{
 		CoreTickParams.m_HookGrabTime = g_Config.m_InfSpiderHookTime*SERVER_TICK_SPEED;
-	}
+	}*/
 	if(GetClass() == PLAYERCLASS_BAT)
 	{
 		CoreTickParams.m_HookGrabTime = g_Config.m_InfBatHookTime*SERVER_TICK_SPEED;

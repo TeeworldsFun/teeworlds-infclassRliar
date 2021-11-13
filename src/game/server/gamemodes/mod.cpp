@@ -56,6 +56,7 @@ void CGameControllerMOD::OnClientDrop(int ClientID, int Type)
 	CPlayer* pPlayer = GameServer()->m_apPlayers[ClientID];
 	if(pPlayer && pPlayer->IsZombie() && m_InfectedStarted)
 	{
+		GameServer()->CountInfPlayers();
 		SetFirstInfectedNumber();
 		
 		if(GameServer()->GetZombieCount() < GetFirstInfNb())

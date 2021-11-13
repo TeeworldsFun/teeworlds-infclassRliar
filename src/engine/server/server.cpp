@@ -41,6 +41,7 @@
 #include <algorithm>
 #include <engine/server/mapconverter.h>
 #include <engine/server/sql_job.h>
+#include <engine/server/sql_server.h>
 #include <engine/server/crypt.h>
 
 #include <teeuniverses/components/localization.h>
@@ -2644,7 +2645,6 @@ bool CServer::ConchainConsoleOutputLevelUpdate(IConsole::IResult *pResult, void 
 bool CServer::ConAddSqlServer(IConsole::IResult *pResult, void *pUserData)
 {
 	CServer *pSelf = (CServer *)pUserData;
-
 	if (pResult->NumArguments() != 7 && pResult->NumArguments() != 8)
 		return false;
 
@@ -2716,7 +2716,7 @@ bool CServer::ConDumpSqlServers(IConsole::IResult *pResult, void *pUserData)
 
 void CServer::CreateTablesThread(void *pData)
 {
-	((CSqlServer *)pData)->CreateTables();
+	CSqlServer** CreateTables();
 }
 #endif
 
@@ -2753,10 +2753,10 @@ void CServer::RegisterCommands()
 	Console()->Register("whisper", "s<id> r<txt>", CFGFLAG_SERVER, ConWhisper, this, "Analogous to 'Say' but sent to a single client only");
 	
 /* INFECTION MODIFICATION START ***************************************/
-#ifdef CONF_SQL
-	Console()->Register("inf_add_sqlserver", "ssssssi?i", CFGFLAG_SERVER, ConAddSqlServer, this, "add a sqlserver");
-	Console()->Register("inf_list_sqlservers", "s", CFGFLAG_SERVER, ConDumpSqlServers, this, "list all sqlservers readservers = r, writeservers = w");
-#endif
+	#ifdef CONF_SQL
+		Console()->Register("inf_add_sqlserver", "ssssssi?i", CFGFLAG_SERVER, ConAddSqlServer, this, "add a sqlserver");
+		Console()->Register("inf_list_sqlservers", "s", CFGFLAG_SERVER, ConDumpSqlServers, this, "list all sqlservers readservers = r, writeservers = w");
+	#endif
 	Console()->Register("print_idcount", "", CFGFLAG_SERVER, ConGetIDCount, this, "prints how many entity ids are currently used - useful for debugging");
 /* INFECTION MODIFICATION END *****************************************/
 

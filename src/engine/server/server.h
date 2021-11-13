@@ -290,8 +290,10 @@ public:
 	static bool ConWhisper(class IConsole::IResult *pResult, void *pUser);
 	
 /* DDNET MODIFICATION START *******************************************/
-	static bool ConAddSqlServer(IConsole::IResult *pResult, void *pUserData);
-	static bool ConDumpSqlServers(IConsole::IResult *pResult, void *pUserData);
+	#ifdef CONF_SQL
+		static bool ConAddSqlServer(IConsole::IResult *pResult, void *pUserData);
+		static bool ConDumpSqlServers(IConsole::IResult *pResult, void *pUserData);
+	#endif
 	static bool ConGetIDCount(IConsole::IResult *pResult, void *pUser);
 
 	static void CreateTablesThread(void *pData);
