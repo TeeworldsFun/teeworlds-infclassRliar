@@ -14,7 +14,7 @@
 CGameControllerMOD::CGameControllerMOD(class CGameContext *pGameServer)
 : IGameController(pGameServer)
 {
-	m_pGameType = "dInfClassRc         liar";
+	m_pGameType = "dInfClassRChina";
 	m_GrowingMap = 0;
 	
 	m_ExplosionStarted = false;
