@@ -334,7 +334,7 @@ void CCharacterCore::Tick(bool UseInput, CParams* pParams)
 			m_HookPos = m_Pos;
 		}
 		
-		if(pParams->m_HookMode == 1  && distance(m_HookPos, m_Pos) > 600.0f)
+		if(pParams->m_HookMode == 1 && distance(m_HookPos, m_Pos) > 600.0f)
 		{
 			// release hook
 			m_HookedPlayer = -1;
