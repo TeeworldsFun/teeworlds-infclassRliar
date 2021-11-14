@@ -5,7 +5,8 @@
 #include "generated/nethash.cpp"
 #define GAME_VERSION "0.6.4"
 #define GAME_NETVERSION_HASH_FORCED "868ccbe551010094"
-#define GAME_NETVERSION "0.6 " GAME_NETVERSION_HASH
+#define GAME_VERSION "0.6 " GAME_NETVERSION_HASH
+#define GAME_NETVERSION "0.6 868ccbe551010094"
 #define LAST_COMPILE_DATE __DATE__
 static const char GAME_RELEASE_VERSION[8] = "0.6.4";
 
