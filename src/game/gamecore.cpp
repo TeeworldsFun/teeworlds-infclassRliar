@@ -1,6 +1,7 @@
 /* (c) Magnus Auvinen. See licence.txt in the root of the distribution for more information. */
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
 #include "gamecore.h"
+#include <src/game/server/player.h>
 
 const char *CTuningParams::m_apNames[] =
 {
@@ -334,7 +335,7 @@ void CCharacterCore::Tick(bool UseInput, CParams* pParams)
 			m_HookPos = m_Pos;
 		}
 		
-		if(pParams->m_HookMode == 1 && distance(m_HookPos, m_Pos) > 600.0f)
+		if(pParams->m_HookMode == 1  && distance(m_HookPos, m_Pos) > 600.0f)
 		{
 			// release hook
 			m_HookedPlayer = -1;

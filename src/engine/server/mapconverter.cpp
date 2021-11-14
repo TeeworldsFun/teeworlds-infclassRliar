@@ -570,7 +570,7 @@ void CMapConverter::Finalize()
 	
 	//Menu
 	
-	const float MenuRadius = 300.0f;
+	const float MenuRadius = 250.0f;
 	const float MenuAngleStart = -pi/2.0f;
 	
 	{

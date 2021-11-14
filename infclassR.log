@@ -73,3 +73,5 @@
 [61908cd7][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
 [61908ce6][register]: ERROR: the master server reports that clients can not connect to this server.
 [61908ce6][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908cf5][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908cf5][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
