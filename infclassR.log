@@ -1,54 +1,75 @@
-[618f8966][server]: starting...
-[618f8966][datafile]: loading. filename='maps/infc_newdust.map'
-[618f8966][datafile]: allocsize=3932
-[618f8966][datafile]: readsize=3532
-[618f8966][datafile]: swaplen=3552
-[618f8966][datafile]: item_size=2996
-[618f8966][datafile]: loading done. datafile='maps/infc_newdust.map'
-[618f8966][datafile]: loading. filename='maps/infc_newdust.map'
-[618f8966][datafile]: allocsize=3932
-[618f8966][datafile]: readsize=3532
-[618f8966][datafile]: swaplen=3552
-[618f8966][datafile]: item_size=2996
-[618f8966][datafile]: loading done. datafile='maps/infc_newdust.map'
-[618f8966][datafile]: loading data index=15 size=1831 uncompressed=176400
-[618f8966][datafile]: loading. filename='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
-[618f8966][datafile]: allocsize=22816
-[618f8966][datafile]: readsize=22256
-[618f8966][datafile]: swaplen=22276
-[618f8966][datafile]: item_size=21332
-[618f8966][datafile]: loading done. datafile='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
-[618f8966][server]: map crc is 19d6608f, generated map crc is 5e774e96
-[618f8966][server]: maps/infc_x_current.map loaded in memory
-[618f8966][server]: server name is '[中国合伙人]新角色! dInfcRChina感染模式[CHNFun]修改版'
-[618f8966][datafile]: loading data index=23 size=1274 uncompressed=12464
-[618f8966][datafile]: loading data index=24 size=735 uncompressed=7296
-[618f8966][datafile]: loading data index=25 size=244 uncompressed=2584
-[618f8966][server]: version 0.6 bfa4d5b55f42e5a3
-[618f8966][engine/mastersrv]: refreshing master server addresses
-[618f8966][register]: refreshing ip addresses
-[618f8966][server]: player is ready. ClientID=0 addr=127.0.0.1:36937 secure=yes
-[618f8966][engine/mastersrv]: saving addresses
-[618f8966][register]: fetching server counts
-[618f8967][game]: Active Players: 0
-[618f8967][game]: Spectators: 0
-[618f8967][server]: player has entered the game. ClientID=0 addr=127.0.0.1:36937
-[618f8967][game]: team_join player='0:FLowerFEll-SAns' team=0
-[618f8967][game]: Active Players: 1
-[618f8967][game]: Spectators: 0
-[618f8967][datafile]: loading data index=21 size=333 uncompressed=176400
-[618f8969][game]: choose_class player='FLowerFEll-SAns' class='12'
-[618f8969][register]: chose 'master3.teeworlds.com' as master, sending heartbeats
-[618f899f][register]: ERROR: the master server reports that clients can not connect to this server.
-[618f899f][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
-[618f89a0][server]: ClientID=0 authed (admin)
-[618f89a1][server]: ClientID=0 rcon='shutdown'
-[618f89a1][server]: client dropped. cid=0 addr=127.0.0.1:36937 reason='Server shutdown'
-[618f89a1][game]: kill killer='FLowerFEll-SAns' victim='FLowerFEll-SAns' weapon=-3
-[618f89a1][game]: infected victim='FLowerFEll-SAns' duration='0'
-[618f89a1][game]: choose_class player='FLowerFEll-SAns' class='16'
-[618f89a1][server]: leave player='0:FLowerFEll-SAns'
-[618f89a1][game]: Active Players: 0
-[618f89a1][game]: Spectators: 0
-[618f89a1][infclass]: session created for the client 0
-[618f89a1][infclass]: accusation created for the client 0
+[61908c53][server]: starting...
+[61908c53][datafile]: loading. filename='maps/infc_newdust.map'
+[61908c53][datafile]: allocsize=3932
+[61908c53][datafile]: readsize=3532
+[61908c53][datafile]: swaplen=3552
+[61908c53][datafile]: item_size=2996
+[61908c53][datafile]: loading done. datafile='maps/infc_newdust.map'
+[61908c53][datafile]: loading. filename='maps/infc_newdust.map'
+[61908c53][datafile]: allocsize=3932
+[61908c53][datafile]: readsize=3532
+[61908c53][datafile]: swaplen=3552
+[61908c53][datafile]: item_size=2996
+[61908c53][datafile]: loading done. datafile='maps/infc_newdust.map'
+[61908c53][datafile]: loading data index=15 size=1831 uncompressed=176400
+[61908c53][datafile]: loading. filename='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
+[61908c53][datafile]: allocsize=22816
+[61908c53][datafile]: readsize=22256
+[61908c53][datafile]: swaplen=22276
+[61908c53][datafile]: item_size=21332
+[61908c53][datafile]: loading done. datafile='clientmaps/infc_newdust_19d6608f/tw06-highres.map'
+[61908c53][server]: map crc is 19d6608f, generated map crc is 5e774e96
+[61908c53][server]: maps/infc_x_current.map loaded in memory
+[61908c53][server]: server name is '[中国合伙人]新角色! dInfcRChina感染模式[CHNFun]修改版'
+[61908c53][datafile]: loading data index=23 size=1274 uncompressed=12464
+[61908c53][datafile]: loading data index=24 size=735 uncompressed=7296
+[61908c53][datafile]: loading data index=25 size=244 uncompressed=2584
+[61908c53][server]: version 0.6 bfa4d5b55f42e5a3
+[61908c53][engine/mastersrv]: refreshing master server addresses
+[61908c53][register]: refreshing ip addresses
+[61908c53][engine/mastersrv]: saving addresses
+[61908c53][register]: fetching server counts
+[61908c55][server]: player is ready. ClientID=0 addr=127.0.0.1:5076 secure=yes
+[61908c56][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
+[61908c56][game]: Active Players: 0
+[61908c56][game]: Spectators: 0
+[61908c57][server]: player has entered the game. ClientID=0 addr=127.0.0.1:5076
+[61908c57][game]: team_join player='0:FlowerFell-Sans' team=0
+[61908c57][game]: Active Players: 1
+[61908c57][game]: Spectators: 0
+[61908c57][datafile]: loading data index=21 size=333 uncompressed=176400
+[61908c58][game]: choose_class player='FlowerFell-Sans' class='12'
+[61908c6b][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908c6b][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908c76][game]: score player='FlowerFell-Sans' amount='-10'
+[61908c76][game]: kill killer='FlowerFell-Sans' victim='FlowerFell-Sans' weapon=4
+[61908c76][game]: infected victim='FlowerFell-Sans' duration='0'
+[61908c76][game]: choose_class player='FlowerFell-Sans' class='16'
+[61908c7a][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908c7a][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908c8d][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908c8d][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908c92][register]: WARNING: Master server is not responding, switching master
+[61908c92][engine/mastersrv]: refreshing master server addresses
+[61908c92][register]: refreshing ip addresses
+[61908c92][engine/mastersrv]: saving addresses
+[61908c92][register]: fetching server counts
+[61908c95][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
+[61908c9c][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908c9c][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908caa][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908caa][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908cba][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908cba][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908cc9][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908cc9][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908cd1][register]: WARNING: Master server is not responding, switching master
+[61908cd1][engine/mastersrv]: refreshing master server addresses
+[61908cd1][register]: refreshing ip addresses
+[61908cd4][engine/mastersrv]: saving addresses
+[61908cd4][register]: fetching server counts
+[61908cd7][register]: chose 'master4.teeworlds.com' as master, sending heartbeats
+[61908cd7][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908cd7][register]: ERROR: configure your firewall/nat to let through udp on port 23333.
+[61908ce6][register]: ERROR: the master server reports that clients can not connect to this server.
+[61908ce6][register]: ERROR: configure your firewall/nat to let through udp on port 23333.

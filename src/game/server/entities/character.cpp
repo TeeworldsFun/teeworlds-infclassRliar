@@ -1412,7 +1412,8 @@ void CCharacter::FireWeapon()
 				else if (GetClass() == PLAYERCLASS_SPIDER) {
 					Damage = 3;
 					new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach*0.7f, m_pPlayer->GetCID(), Damage);
-					GameServer()->CreateSound(m_Pos, SOUND_RIFLE_BOUNCE);
+					GameServer()->CreateSound(m_Pos, SOUND_RIFLE_FIRE);
+					GameServer()->CreateExplosion(m_Pos, m_pPlayer->GetCID(), WEAPON_RIFLE, false, TAKEDAMAGEMODE_SELFHARM, -1.0f);
 				}
 				else
 				{
