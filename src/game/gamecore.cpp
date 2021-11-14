@@ -516,4 +516,3 @@ bool CCharacterCore::IsChildCharacter(CCharacterCore *suspect, CCharacterCore *m
 	}
 	else return false;
 }
-
